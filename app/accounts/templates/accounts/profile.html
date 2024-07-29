@@ -1,0 +1,33 @@
+{% extends 'layouts/full_nav.html' %}
+{% block title %} Dashboard {% endblock %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="breadcrumb-title pe-3"><h1>Perfil de Usuario</h1><hr></div>
+</div>
+<!--end breadcrumb-->
+
+
+<div class="row row-cols-12 row-cols-lg-12 row-cols-xxl-12">
+    <div class="col">
+        <div class="card radius-10">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group_db">
+                        {{ form.as_p }}
+                    </div>
+                    <button class="btn btn-primary" type="submit">Cambiar Información personal</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+  
+</div>
+
+
+{% endblock %}

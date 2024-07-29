@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">{{"Usuario"|upper}}</th>
+            <th scope="col">{{ "Nombres y Apellidos"|upper }}</th>
+            <th scope="col">{{"Correo"|upper}}</th>
+            <!-- <th scope="col">{{"Token"|upper}}</th> -->
+            <!-- <th scope="col">Tipo</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in list_user%}
+
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <th scope="row">{{ user}}</th>
+            <th scope="row">{{ user.first_name}} {{ user.last_name}}</th>
+            <th scope="row">{{ user.email}}</th>
+            <!-- <th>{{ user.token.key  }}</th> -->
+            <!-- <th scope="row">
+                {% for group in user.groups.all %}
+                {{ group.name }}
+                {% endfor %}
+            </th> -->
+
+        </tr>
+
+
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+# Documento Nacional de Identidad (DNI) Management System
+
+Este documento proporciona codigo para poder hacer uso de una API ya existente y poder reutilizarla a tus necesidades, en pocas palabras creamos una API que consuma a otra API y cuenta con un inición de sesión, se realizo con Python en el Frameword Django
+
+
+## Requisitos
+
+Antes de comenzar, asegúrate de tener instalado Python 3.x . También necesitarás un entorno virtual para Python.
+
+## Instalación
+
+1. Clona el repositorio del proyecto en tu máquina local.
+2. Navega al directorio del proyecto en tu terminal.
+3. Crea e activa un entorno virtual Python.
+4. Instala las librerias de requirements.txt
+5. crea un superuser y comienza a interactuar
+
+
+## Configuración
+
+1. Copia el archivo `.env.example` a `.env` y configura tus variables de entorno según sea necesario.
+2. Ejecuta las migraciones para preparar la base de datos.
+
+## Uso de la API
+
+Al crear el usuario se te creara un TOKEN unico donde podrás hacer pruebas de operatividad.
+
+### Ejemplo de consulta de DNI
+
+Para consultar información de un DNI específico, realiza una solicitud GET a http://localhost:8000/api/dni/<dni_number>/
+
+Donde `<dni_number>` es el número de DNI que deseas consultar.
+
+usa Postman o otra herramienta que te permita hacer la consulta, edita  `Autorization = token {token`
+
+### Autenticación
+
+Para acceder a ciertos recursos protegidos por la API, debes autenticarte utilizando tokens de acceso. 
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Por favor Ayudame a mejorar, abre un issue si encuentras algún problema o mejora potencial.
+

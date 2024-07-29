@@ -1,0 +1,113 @@
+{% extends 'layouts/full_nav.html' %}
+{% block title %} Dashboard {% endblock %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="breadcrumb-title pe-3"><h1>Dashboard</h1><hr></div>
+</div>
+<!--end breadcrumb-->
+
+
+<div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-4">
+    <div class="col">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-start gap-2">
+                    <div>
+                        <p class="mb-0 fs-6">Cantidad de Consultas</p>
+                    </div>
+                    <div class="ms-auto widget-icon-small text-white bg-gradient-purple">
+                        <ion-icon name="wallet-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                    <div>
+                        <h4 class="mb-0"> {{ total_querys }}</h4>
+                    </div>
+                    <!-- <div class="ms-auto">+6.32%</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-start gap-2">
+                    <div>
+                        <p class="mb-0 fs-6">Total de Clientes</p>
+                    </div>
+                    <div class="ms-auto widget-icon-small text-white bg-gradient-info">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                    <div>
+                        <h4 class="mb-0">{{ total_clients }}</h4>
+                    </div>
+                    <!-- <div class="ms-auto">+12.45%</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-start gap-2">
+                    <div>
+                        <p class="mb-0 fs-6">Total de Token</p>
+                    </div>
+                    <div class="ms-auto widget-icon-small text-white bg-gradient-danger">
+                        <ion-icon name="bag-handle-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                    <div>
+                        <h4 class="mb-0">{{total_token}}</h4>
+                    </div>
+                    <!-- <div class="ms-auto">+3.12%</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card radius-10">
+            <div class="card-body">
+                <div class="d-flex align-items-start gap-2">
+                    <div>
+                        <p class="mb-0 fs-6">Total Administradores</p>
+                    </div>
+                    <div class="ms-auto widget-icon-small text-white bg-gradient-success">
+                        <ion-icon name="bar-chart-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mt-3">
+                    <div>
+                        <h4 class="mb-0">{{total_admin}}</h4>
+                    </div>
+                    <!-- <div class="ms-auto">+8.52%</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end row-->
+ 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card radius-10 ">
+            <div class="card-body">
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3 ">
+                        <h1>Lista de Clientes</h1><hr>
+                    </div>
+                </div>
+                {% include 'includes/list_clients.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

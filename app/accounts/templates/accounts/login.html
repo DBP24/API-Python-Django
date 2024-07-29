@@ -1,0 +1,73 @@
+{% extends 'layouts/nav.html' %}
+{% block title %} Login {% endblock %}
+{% load static %}  
+{% block content%}
+<div class="col-xl-4 col-lg-5 col-md-7 mx-auto mt-5">
+    <div class="card radius-10">
+        <div class="card-body p-4">
+            <div class="text-center mb-4 mt-2">
+                <img class="_logo" src="{% static 'project/logo_05.png' %}" alt="Diego Bonatti">
+            </div>
+
+            {% if msg %}
+            <div class="alert alert-danger">
+                <p>{{ msg }}</p>
+            </div>
+            <div class="col-12 col-lg-12">
+                <div class="d-grid m-2">
+                    <a href="{% url 'accounts:login' %}"  class="btn btn-primary">Retornar</a>
+                </div>
+            </div>
+            {% else %}
+            
+            <form class="form-body row g-3"  method="POST">
+                
+              
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {% for error in form.non_field_errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    {% for field in form %}
+                        <div class="col-12">
+                            <label class="form-label">{{ field.label_tag }}</label>
+                            {{ field }}
+                            {% for error in field.errors %}
+                                <span class="alert alert-danger">{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+<!-- 
+                    <button class="btn login-form__btn  submit w-100">Iniciar sesión</button>
+                </form> -->
+                
+              
+                <div class="col-12 col-lg-6">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" name="recordarme"
+                            value="1">
+                        <label class="form-check-label" for="flexSwitchCheckRemember">Recordar</label>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 text-end">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div class="col-12 col-lg-12">
+                    <div class="d-grid m-2">
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </div>
+                    <div class="d-grid m-2">
+                        <a href="{% url 'users_clients:documents_clients' %}" class="btn btn-primary">CLIENTE NUEVO -> </a>
+                    </div>
+                </div>
+            </form>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock%}
